@@ -83,7 +83,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         decoration: InputDecoration(
             prefixIcon: Icon(Icons.account_circle),
             contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-            hintText: 'Last Name',
+            hintText: 'LastName',
             border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(10))));
 
