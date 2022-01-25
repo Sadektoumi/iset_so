@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:iset_emploi/screens/Main_home_screen.dart';
+import 'package:iset_emploi/screens/admin/branches/add_branches_page.dart';
+import 'package:iset_emploi/screens/admin/admin_home.dart';
+import 'package:iset_emploi/screens/admin/branches/branche.dart';
+import 'package:iset_emploi/screens/admin/branches/list_branches.dart';
 import 'package:iset_emploi/screens/registration_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+import 'admin/branches/add_branches_page.dart';
 
 class loginScreen extends StatefulWidget {
   loginScreen({Key? key}) : super(key: key);
@@ -153,7 +158,7 @@ class _loginScreenState extends State<loginScreen> {
           .then((value) => {
                 Fluttertoast.showToast(msg: "login Successful"),
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => MainHome())),
+                    MaterialPageRoute(builder: (context) => AdminPage())),
               })
           .catchError((e) {
         Fluttertoast.showToast(msg: e!.message);

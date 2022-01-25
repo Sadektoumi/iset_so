@@ -44,10 +44,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           if (value!.isEmpty) {
             return ("first Name is required");
           }
-          if (!RegExp("^[a-zA-Z0-9+_,-]+@[a-zA-Z0-9+_,-]+.[a-z]")
-              .hasMatch(value)) {
-            return ("please enter a valid first Name");
-          }
+
           return null;
         },
         onSaved: (value) {
@@ -70,10 +67,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           if (value!.isEmpty) {
             return ("Last Name required");
           }
-          if (!RegExp("^[a-zA-Z0-9+_,-]+@[a-zA-Z0-9+_,-]+.[a-z]")
-              .hasMatch(value)) {
-            return ("please enter a valid Last Name");
-          }
+
           return null;
         },
         onSaved: (value) {
@@ -94,7 +88,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         keyboardType: TextInputType.emailAddress,
         validator: (value) {
           if (value!.isEmpty) {
-            return ("email is required");
+            return ("email is r equired");
           }
           if (!RegExp("^[a-zA-Z0-9+_,-]+@[a-zA-Z0-9+_,-]+.[a-z]")
               .hasMatch(value)) {
@@ -144,7 +138,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         controller: ConfirmPasswordEditingController,
         obscureText: true,
         validator: (value) {
-          if (ConfirmPasswordEditingController != PasswordEditingController) {
+          if (ConfirmPasswordEditingController.text !=
+              PasswordEditingController.text) {
             return ("password don't match");
           }
           return null;
