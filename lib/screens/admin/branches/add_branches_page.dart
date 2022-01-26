@@ -34,13 +34,27 @@ class _AddbranchePageState extends State<AddbranchePage> {
   }
 
   // Adding Student
-  CollectionReference branches =
-      FirebaseFirestore.instance.collection('bracnhes');
+  CollectionReference filieres =
+      FirebaseFirestore.instance.collection('filiere');
 
-  Future<void> addbranche() {
-    return branches
-        .add({'filiere': filiere, 'matiere': matiere})
-        .then((value) => print('branche adde'))
+  Future<void> addfiliere() {
+    return filieres
+        .add({
+          'filiere': filiere,
+        })
+        .then((value) => print('filiere added'))
+        .catchError((error) => print('Failed to Add branche: $error'));
+  }
+
+  CollectionReference matieres =
+      FirebaseFirestore.instance.collection('matiere');
+
+  Future<void> addmatiere() {
+    return matieres
+        .add({
+          'matiere': matiere,
+        })
+        .then((value) => print('matieres added'))
         .catchError((error) => print('Failed to Add branche: $error'));
   }
 
@@ -108,7 +122,8 @@ class _AddbranchePageState extends State<AddbranchePage> {
                             filiere = filiereController.text;
                             matiere = matiereController.text;
 
-                            addbranche();
+                            addfiliere();
+                            addmatiere();
                             clearText();
                           });
                         }
